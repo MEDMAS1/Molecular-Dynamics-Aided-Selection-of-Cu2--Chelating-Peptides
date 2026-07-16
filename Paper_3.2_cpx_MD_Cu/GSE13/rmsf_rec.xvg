@@ -1,0 +1,30 @@
+# This file was created Sun Jul  2 11:55:36 2023
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2021.4 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /media/med/C6761EA6761E9771/Users/MED/Desktop/Paper 3/Paper 3.2/cpx/pep2
+# Command line:
+#   gmx rmsf -s md.tpr -f analisis.xtc -res -o rmsf_rec.xvg
+# gmx rmsf is part of G R O M A C S:
+#
+# Glycine aRginine prOline Methionine Alanine Cystine Serine
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Residue"
+@    yaxis  label "(nm)"
+@TYPE xy
+    1   0.4638
+    2   0.3154
+    3   0.3210
+    4   0.2858
+    5   0.3072
+    6   0.2982
+    7   0.2427
+    8   0.2437
+    9   0.2665
+   10   0.2607
+   11   0.2989
+   12   0.3794
+   13   0.4357

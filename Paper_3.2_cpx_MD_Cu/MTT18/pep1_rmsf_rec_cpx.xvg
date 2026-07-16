@@ -1,0 +1,35 @@
+# This file was created Sun Jul  2 11:55:01 2023
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2021.4 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /media/med/C6761EA6761E9771/Users/MED/Desktop/Paper 3/Paper 3.2/cpx/pep1
+# Command line:
+#   gmx rmsf -s md.tpr -f analisis.xtc -res -o rmsf_rec.xvg
+# gmx rmsf is part of G R O M A C S:
+#
+# GRoups of Organic Molecules in ACtion for Science
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Residue"
+@    yaxis  label "(nm)"
+@TYPE xy
+    1   0.4523
+    2   0.4804
+    3   0.5534
+    4   0.5874
+    5   0.5160
+    6   0.3699
+    7   0.3218
+    8   0.3284
+    9   0.2633
+   10   0.3089
+   11   0.2738
+   12   0.3321
+   13   0.3352
+   14   0.3114
+   15   0.4080
+   16   0.4951
+   17   0.5882
+   18   0.6744

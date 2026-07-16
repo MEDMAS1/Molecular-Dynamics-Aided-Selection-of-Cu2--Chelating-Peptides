@@ -1,0 +1,42 @@
+# This file was created Sun Jul  2 11:57:57 2023
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2021.4 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /media/med/C6761EA6761E9771/Users/MED/Desktop/Paper 3/Paper 3.2/cpx/pep3
+# Command line:
+#   gmx rmsf -s md.tpr -f analisis.xtc -res -o rmsf_rec.xvg
+# gmx rmsf is part of G R O M A C S:
+#
+# Great Red Owns Many ACres of Sand 
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Residue"
+@    yaxis  label "(nm)"
+@TYPE xy
+    1   0.8108
+    2   0.6703
+    3   0.5479
+    4   0.4613
+    5   0.3133
+    6   0.3001
+    7   0.3249
+    8   0.2323
+    9   0.1929
+   10   0.3177
+   11   0.3441
+   12   0.2666
+   13   0.3109
+   14   0.3340
+   15   0.2713
+   16   0.2675
+   17   0.2838
+   18   0.2419
+   19   0.2753
+   20   0.3113
+   21   0.2561
+   22   0.2574
+   23   0.3303
+   24   0.4723
+   25   0.6496

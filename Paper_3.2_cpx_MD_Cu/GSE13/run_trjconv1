@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH --partition=workq
+#SBATCH --job-name="gromacs"
+#SBATCH --nodes=1
+#SBATCH --time=20:20:00
+#SBATCH --exclusive
+#SBATCH --err=std.err
+#SBATCH --output=std.out
+#----------------------------------------------------------#
+export GROMACS_USE="" # Default
+#export GROMACS_USE=_plumed # compiled with plumed 2.6.1
+module load gromacs/2021.4
+export OMP_NUM_THREADS=1
+#----------------------------------------------------------#
+echo "The job "${SLURM_JOB_ID}" is running on "${SLURM_JOB_NODELIST}
+#----------------------------------------------------------#
+echo 0 | gmx trjconv -s md.tpr -f md.trr -skip 10 -o new.trr
