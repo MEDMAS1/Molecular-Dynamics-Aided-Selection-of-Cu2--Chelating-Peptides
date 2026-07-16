@@ -1,3 +1,5 @@
 # Ignore only MD files
 md*
 */md*
+#md*#
+*/#md*#
