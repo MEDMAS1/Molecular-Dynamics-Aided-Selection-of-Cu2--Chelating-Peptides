@@ -1,0 +1,7 @@
+REMARK  1 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: Fe_1  and  Fe_1 
+ROOT
+HETATM    1 Fe   UNK     0      36.494   0.526   7.311  0.00  0.00     0.000 Fe
+ENDROOT
+TORSDOF 1

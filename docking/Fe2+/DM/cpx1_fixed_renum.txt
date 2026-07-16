@@ -1,0 +1,14 @@
+GLY A     1    GLY     1
+SER A     2    SER     2
+LYS A     3    LYS     3
+VAL A     4    VAL     4
+HIS A     5    HIS     5
+VAL A     6    VAL     6
+PHE A     7    PHE     7
+PRO A     8    PRO     8
+LYS A     9    LYS     9
+MET A    10    MET    10
+GLY A    11    GLY    11
+MET A    12    MET    12
+GLU A    13    GLU    13
+ FE       1     FE    14

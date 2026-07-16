@@ -1,0 +1,870 @@
+          AutoDock 4.2 Release 4.2.6   
+         (C) 1989-2012 The Scripps Research Institute
+        AutoDock comes with ABSOLUTELY NO WARRANTY.
+        AutoDock is free software, and you are welcome
+        to redistribute it under certain conditions;
+        for details type 'autodock4 -C'
+
+                     main.cc  $Revision: 1.213 $
+
+                   Compiled on Jul 18 2014 at 18:34:22
+
+
+This file was created at:			12:44 18" p.m., 06/08/2026
+                   on host:		"DESKTOP-N0KCINQ"
+Current Working Directory = "/mnt/c/work/chemistry_select/Fe2+"
+
+      ________________________________________________________________
+
+                   SETTING UP DEFAULT PARAMETER LIBRARY
+      ________________________________________________________________
+
+
+Random number generator was seeded with values 976, 1780893858.
+Docking parameter file (DPF) used for this docking:		./1.dpf
+DPF> autodock_parameter_version 4.2       # used by autodock to validate parameter set
+
+	Autodock parameter version 4.2.
+DPF> parameter_file AD4.1_bound.dat       # parameter library filename 
+
+Using read_parameter_library() to try to open and read "AD4.1_bound.dat".
+
+DPF> intelec                              # calculate internal electrostatics
+
+Electrostatic energies will be calculated for all non-bonds between moving atoms.
+DPF> seed pid time                        # seeds for random generator
+
+Random number generator was seeded with values 976, 1780893858.
+DPF> ligand_types Fe                      # atoms types in ligand
+
+DPF> fld pep3.maps.fld                    # grid_data_file
+
+Opening Grid Map Dimensions file:		pep3.maps.fld
+Grid Point Spacing =				0.375 Angstroms
+
+Even Number of User-specified Grid Points =	64 x-points
+						62 y-points
+						40 z-points
+
+Coordinates of Central Grid Point of Maps =	(33.035, -3.974, 6.561)
+Macromolecule file used to create Grid Maps =	pep3.pdbqt
+Grid Parameter file used to create Grid Maps =	./1.gpf
+Minimum coordinates in grid = (21.035, -15.599, -0.939)
+Maximum coordinates in grid = (45.035, 7.651, 14.061)
+
+DPF> map pep3.Fe.map                      # atom-specific affinity map
+
+DPF> elecmap pep3.e.map                   # electrostatics map
+
+DPF> desolvmap pep3.d.map                 # desolvation map
+
+DPF> move Fe2+.pdbqt                      # small molecule
+
+1,4-interactions will be _ignored_ in the non-bonded internal energy calculation.
+
+Ligand PDBQT file = "Fe2+.pdbqt"
+
+INPUT LIGAND PDBQT FILE:
+________________________
+
+INPUT-LIGAND-PDBQT: REMARK  Name = 27284
+INPUT-LIGAND-PDBQT: REMARK  0 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK                            x       y       z     vdW  Elec       q    Type
+INPUT-LIGAND-PDBQT: REMARK                         _______ _______ _______ _____ _____    ______ ____
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: ATOM      1 FE   UNL A   1       2.000   0.000   0.000  0.00  0.00    +2.000 Fe
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: TORSDOF 0
+________________________________________________________________________________
+
+Total charge on ligand                               =	+2.000 e
+REMARK  Name = 27284
+REMARK  0 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+
+*** No Rotatable Bonds detected in Small Molecule. ***
+
+Number of atoms in ligand:  1
+
+Number of non-hydrogen atoms in ligand:  1
+
+Number of vibrational degrees of freedom of ligand:  -3
+
+
+Number of torsional degrees of freedom = 0
+Estimated loss of torsional free energy upon binding = +0.0000 kcal/mol
+
+
+DPF> about 2.000 0.000 0.000            # small molecule center
+
+Small molecule center of rotation =	(+2.000, +0.000, +0.000)
+
+DPF> tran0 random                         # initial coordinates/A or random
+
+Initial translation =			(30.881, 3.787, 9.758) Angstroms
+DPF> quaternion0 random                   # initial orientation
+
+Each run will begin with a new, random initial orientation.
+Initial quaternion,  (x,y,z,w) =	( 0.390, 0.691, 0.608, 0.029 ),
+DPF> dihe0 random                         # initial dihedrals (relative) or random
+
+DPF> torsdof 0                            # torsional degrees of freedom
+
+Number of torsional degrees of freedom = 0
+Free energy coefficient for torsional degrees of freedom = 0.2983 as specified in parameter library "AD4.1_bound.dat".
+
+Estimated loss of torsional free energy upon binding = +0.0000 kcal/mol
+
+DPF> rmstol 2.0                           # cluster_tolerance/A
+
+Maximum RMS tolerance for conformational cluster analysis = 2.00 Angstroms
+DPF> extnrg 1000.0                        # external grid energy
+
+External grid energy (beyond grid map walls) = 1000.00
+
+DPF> e0max 0.0 10000                      # max initial energy; max number of retries
+
+Using user-specified maximum number of retries for simanneal initialization, 10000 retries.
+If the simanneal initial energy is greater than e0max, 0.000,
+then a new, random initial state will be created.
+
+DPF> ga_pop_size 150                      # number of individuals in population
+
+A population of 150 individuals will be used
+DPF> ga_num_evals 2500000                 # maximum number of energy evaluations
+
+There will be at most 2500000 function evaluations used.
+DPF> ga_num_generations 27000             # maximum number of generations
+
+The GA will run for at most 27000 generations.
+DPF> ga_elitism 1                         # number of top individuals to survive to next generation
+
+The 1 best will be preserved each GA generation.
+DPF> ga_mutation_rate 0.02                # rate of gene mutation
+
+The mutation rate is 0.020000.
+DPF> ga_crossover_rate 0.8                # rate of crossover
+
+The crossover rate is 0.800000.
+DPF> ga_window_size 10                    # 
+
+The GA's selection window is 10 generations.
+DPF> ga_cauchy_alpha 0.0                  # Alpha parameter of Cauchy distribution
+
+The alpha parameter (for the Cauchy distribution) is being set to 0.000000.
+DPF> ga_cauchy_beta 1.0                   # Beta parameter Cauchy distribution
+
+The beta parameter (for the Cauchy distribution) is being set to 1.000000.
+DPF> set_ga                               # set the above parameters for GA or LGA
+
+DPF> sw_max_its 300                       # iterations of Solis & Wets local search
+
+Solis & Wets algorithms will perform at most 300 iterations.
+DPF> sw_max_succ 4                        # consecutive successes before changing rho
+
+Solis & Wets algorithms expand rho every 4 in a row successes.
+DPF> sw_max_fail 4                        # consecutive failures before changing rho
+
+Solis & Wets algorithms contract rho every 4 in a row failures.
+DPF> sw_rho 1.0                           # size of local search space to sample
+
+rho is set to 1.000000.
+DPF> sw_lb_rho 0.01                       # lower bound on rho
+
+rho will never get smaller than 0.010000.
+DPF> ls_search_freq 0.06                  # probability of performing local search on individual
+
+Local search will be performed with frequency 0.060000.
+DPF> set_psw1                             # set the above pseudo-Solis & Wets parameters
+
+Creating a new Local Search object using the pseudo-Solis-Wets algorithm (pSW1) with the current settings.
+
+DPF> unbound_model bound                  # state of unbound ligand
+
+DPF> ga_run 10                            # do this many hybrid GA-LS runs
+
+centering ligand on specified point: 2.000 0.000 0.000
+Furthest true ligand atom from "about" center is 0.000 Angstroms (maxrad).
+Number of requested GA dockings = 10 runs
+Unbound model to be used is 'same as bound' [AutoDock 4.2 default].
+
+	BEGINNING GENETIC ALGORITHM DOCKING 1 of 10
+Run: 1 Seed: 2037249070 1516626318 [ Run 1 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -11.083
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 40.535 -4.349 12.186 quatxyzw -0.843165 0.283307 0.357805 -0.284227 center 2.000 0.000 0.000 ntor 0
+State:	 40.535  -4.349  12.186  -0.879  0.295  0.373 -146.975  
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER    DPF = ./1.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =  -11.08 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =    7.52 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =  -11.08 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +3.17 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -14.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Fe2+.pdbqt
+DOCKED: USER    NEWDPF about 2.000000 0.000000 0.000000
+DOCKED: USER    NEWDPF tran0 40.535056 -4.349001 12.186095
+DOCKED: USER    NEWDPF quaternion0 -0.843165 0.283307 0.357805 -0.284227
+DOCKED: USER    NEWDPF axisangle0 -0.879436 0.295494 0.373197 -146.974667
+DOCKED: USER    NEWDPF quat0 -0.879436 0.295494 0.373197 -146.974667
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = 27284
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 FE   UNL A   1      40.535  -4.349  12.186 +3.17-14.26    +2.000 Fe
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 2 of 10
+Run: 2 Seed: 880966745 1790556167 [ Run 2 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -11.083
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 40.535 -4.349 12.186 quatxyzw 0.553352 0.295345 0.680903 0.378080 center 2.000 0.000 0.000 ntor 0
+State:	 40.535  -4.349  12.186   0.598  0.319  0.735 135.570  
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER    DPF = ./1.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =  -11.08 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =    7.52 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =  -11.08 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +3.17 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -14.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Fe2+.pdbqt
+DOCKED: USER    NEWDPF about 2.000000 0.000000 0.000000
+DOCKED: USER    NEWDPF tran0 40.535050 -4.349055 12.186036
+DOCKED: USER    NEWDPF quaternion0 0.553352 0.295345 0.680903 0.378080
+DOCKED: USER    NEWDPF axisangle0 0.597719 0.319025 0.735497 135.570382
+DOCKED: USER    NEWDPF quat0 0.597719 0.319025 0.735497 135.570382
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = 27284
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 FE   UNL A   1      40.535  -4.349  12.186 +3.17-14.26    +2.000 Fe
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 3 of 10
+Run: 3 Seed: 1531479097 175771510 [ Run 3 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -11.083
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 40.535 -4.349 12.186 quatxyzw 0.544205 -0.463045 -0.314635 -0.624849 center 2.000 0.000 0.000 ntor 0
+State:	 40.535  -4.349  12.186   0.697 -0.593 -0.403 -102.658  
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER    DPF = ./1.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =  -11.08 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =    7.52 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =  -11.08 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +3.17 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -14.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Fe2+.pdbqt
+DOCKED: USER    NEWDPF about 2.000000 0.000000 0.000000
+DOCKED: USER    NEWDPF tran0 40.535013 -4.349033 12.186063
+DOCKED: USER    NEWDPF quaternion0 0.544205 -0.463045 -0.314635 -0.624849
+DOCKED: USER    NEWDPF axisangle0 0.697032 -0.593080 -0.402992 -102.657843
+DOCKED: USER    NEWDPF quat0 0.697032 -0.593080 -0.402992 -102.657843
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = 27284
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 FE   UNL A   1      40.535  -4.349  12.186 +3.17-14.26    +2.000 Fe
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 4 of 10
+Run: 4 Seed: 795228512 520622752 [ Run 4 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -11.083
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 40.535 -4.349 12.186 quatxyzw 0.136018 -0.207695 -0.369527 0.895439 center 2.000 0.000 0.000 ntor 0
+State:	 40.535  -4.349  12.186   0.306 -0.467 -0.830 52.870  
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER    DPF = ./1.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =  -11.08 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =    7.52 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =  -11.08 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +3.17 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -14.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Fe2+.pdbqt
+DOCKED: USER    NEWDPF about 2.000000 0.000000 0.000000
+DOCKED: USER    NEWDPF tran0 40.535016 -4.349017 12.186109
+DOCKED: USER    NEWDPF quaternion0 0.136018 -0.207695 -0.369527 0.895439
+DOCKED: USER    NEWDPF axisangle0 0.305532 -0.466539 -0.830055 52.870178
+DOCKED: USER    NEWDPF quat0 0.305532 -0.466539 -0.830055 52.870178
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = 27284
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 FE   UNL A   1      40.535  -4.349  12.186 +3.17-14.26    +2.000 Fe
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 5 of 10
+Run: 5 Seed: 1975507468 1455936561 [ Run 5 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -11.083
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 40.535 -4.349 12.186 quatxyzw -0.903123 -0.389790 -0.107017 0.144848 center 2.000 0.000 0.000 ntor 0
+State:	 40.535  -4.349  12.186  -0.913 -0.394 -0.108 163.343  
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER    DPF = ./1.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =  -11.08 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =    7.52 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =  -11.08 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +3.17 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -14.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Fe2+.pdbqt
+DOCKED: USER    NEWDPF about 2.000000 0.000000 0.000000
+DOCKED: USER    NEWDPF tran0 40.535003 -4.349085 12.186023
+DOCKED: USER    NEWDPF quaternion0 -0.903123 -0.389790 -0.107017 0.144848
+DOCKED: USER    NEWDPF axisangle0 -0.912748 -0.393944 -0.108158 163.343027
+DOCKED: USER    NEWDPF quat0 -0.912748 -0.393944 -0.108158 163.343027
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = 27284
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 FE   UNL A   1      40.535  -4.349  12.186 +3.17-14.26    +2.000 Fe
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 6 of 10
+Run: 6 Seed: 1594892583 660998353 [ Run 6 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -11.083
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 40.535 -4.349 12.186 quatxyzw -0.020750 0.513340 0.450338 -0.730238 center 2.000 0.000 0.000 ntor 0
+State:	 40.535  -4.349  12.186  -0.030  0.751  0.659 -86.187  
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER    DPF = ./1.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =  -11.08 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =    7.52 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =  -11.08 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +3.17 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -14.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Fe2+.pdbqt
+DOCKED: USER    NEWDPF about 2.000000 0.000000 0.000000
+DOCKED: USER    NEWDPF tran0 40.535023 -4.349062 12.186012
+DOCKED: USER    NEWDPF quaternion0 -0.020750 0.513340 0.450338 -0.730238
+DOCKED: USER    NEWDPF axisangle0 -0.030372 0.751384 0.659166 -86.187334
+DOCKED: USER    NEWDPF quat0 -0.030372 0.751384 0.659166 -86.187334
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = 27284
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 FE   UNL A   1      40.535  -4.349  12.186 +3.17-14.26    +2.000 Fe
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 7 of 10
+Run: 7 Seed: 1671996004 769745438 [ Run 7 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -11.083
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 40.535 -4.349 12.186 quatxyzw -0.549733 0.467738 -0.457435 0.519392 center 2.000 0.000 0.000 ntor 0
+State:	 40.535  -4.349  12.186  -0.643  0.547 -0.535 117.417  
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER    DPF = ./1.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =  -11.08 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =    7.52 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =  -11.08 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +3.17 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -14.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Fe2+.pdbqt
+DOCKED: USER    NEWDPF about 2.000000 0.000000 0.000000
+DOCKED: USER    NEWDPF tran0 40.535003 -4.349072 12.186029
+DOCKED: USER    NEWDPF quaternion0 -0.549733 0.467738 -0.457435 0.519392
+DOCKED: USER    NEWDPF axisangle0 -0.643312 0.547359 -0.535302 117.417026
+DOCKED: USER    NEWDPF quat0 -0.643312 0.547359 -0.535302 117.417026
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = 27284
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 FE   UNL A   1      40.535  -4.349  12.186 +3.17-14.26    +2.000 Fe
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 8 of 10
+Run: 8 Seed: 2072814755 1595672439 [ Run 8 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -11.083
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 40.535 -4.349 12.186 quatxyzw -0.938932 0.282388 -0.118494 0.156921 center 2.000 0.000 0.000 ntor 0
+State:	 40.535  -4.349  12.186  -0.951  0.286 -0.120 161.944  
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER    DPF = ./1.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =  -11.08 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =    7.52 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =  -11.08 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +3.17 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -14.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Fe2+.pdbqt
+DOCKED: USER    NEWDPF about 2.000000 0.000000 0.000000
+DOCKED: USER    NEWDPF tran0 40.535063 -4.349014 12.186040
+DOCKED: USER    NEWDPF quaternion0 -0.938932 0.282388 -0.118494 0.156921
+DOCKED: USER    NEWDPF axisangle0 -0.950710 0.285930 -0.119980 161.943590
+DOCKED: USER    NEWDPF quat0 -0.950710 0.285930 -0.119980 161.943590
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = 27284
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 FE   UNL A   1      40.535  -4.349  12.186 +3.17-14.26    +2.000 Fe
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 9 of 10
+Run: 9 Seed: 1000586900 1589357794 [ Run 9 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -11.083
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 40.535 -4.349 12.186 quatxyzw -0.089358 -0.519205 -0.380411 -0.760085 center 2.000 0.000 0.000 ntor 0
+State:	 40.535  -4.349  12.186  -0.138 -0.799 -0.585 -81.057  
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER    DPF = ./1.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =  -11.08 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =    7.52 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =  -11.08 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +3.17 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -14.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Fe2+.pdbqt
+DOCKED: USER    NEWDPF about 2.000000 0.000000 0.000000
+DOCKED: USER    NEWDPF tran0 40.535012 -4.349035 12.186004
+DOCKED: USER    NEWDPF quaternion0 -0.089358 -0.519205 -0.380411 -0.760085
+DOCKED: USER    NEWDPF axisangle0 -0.137511 -0.798994 -0.585406 -81.056654
+DOCKED: USER    NEWDPF quat0 -0.137511 -0.798994 -0.585406 -81.056654
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = 27284
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 FE   UNL A   1      40.535  -4.349  12.186 +3.17-14.26    +2.000 Fe
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+	BEGINNING GENETIC ALGORITHM DOCKING 10 of 10
+Run: 10 Seed: 580870566 90438537 [ Run 10 of 10 GA/GALS ]
+Beginning LAMARCKIAN GENETIC ALGORITHM (LGA), with a maximum of 2500000 energy evaluations.
+
+Final-Value: -11.083
+
+
+	FINAL GENETIC ALGORITHM DOCKED STATE
+	_______________________________________________
+
+
+Detailed state:  trans 40.535 -4.349 12.186 quatxyzw 0.136821 -0.560624 -0.525275 0.625353 center 2.000 0.000 0.000 ntor 0
+State:	 40.535  -4.349  12.186   0.175 -0.718 -0.673 102.584  
+
+DOCKED: MODEL       10
+DOCKED: USER    Run = 10
+DOCKED: USER    DPF = ./1.dpf
+DOCKED: USER  
+DOCKED: USER    Estimated Free Energy of Binding    =  -11.08 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER    Estimated Inhibition Constant, Ki   =    7.52 nM (nanomolar)  [Temperature = 298.15 K]
+DOCKED: USER    
+DOCKED: USER    (1) Final Intermolecular Energy     =  -11.08 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =   +3.18 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -14.26 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+DOCKED: USER    
+DOCKED: USER    
+DOCKED: USER    NEWDPF move Fe2+.pdbqt
+DOCKED: USER    NEWDPF about 2.000000 0.000000 0.000000
+DOCKED: USER    NEWDPF tran0 40.535002 -4.348977 12.186017
+DOCKED: USER    NEWDPF quaternion0 0.136821 -0.560624 -0.525275 0.625353
+DOCKED: USER    NEWDPF axisangle0 0.175335 -0.718434 -0.673135 102.583772
+DOCKED: USER    NEWDPF quat0 0.175335 -0.718434 -0.673135 102.583772
+DOCKED: USER  keepresnum = 1 
+DOCKED: USER  
+DOCKED: REMARK  Name = 27284
+DOCKED: REMARK  0 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK                            x       y       z     vdW  Elec       q    Type
+DOCKED: REMARK                         _______ _______ _______ _____ _____    ______ ____
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: ATOM      1 FE   UNL A   1      40.535  -4.349  12.186 +3.18-14.26    +2.000 Fe
+DOCKED: ENDROOT
+DOCKED: TORSDOF 0
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+DPF> analysis                             # perform a ranked cluster analysis
+
+
+		CLUSTER ANALYSIS OF CONFORMATIONS
+		_________________________________
+
+Number of conformations = 10
+
+RMSD cluster analysis will be performed using the ligand atoms only (1 / 1 total atoms).
+
+Outputting structurally similar clusters, ranked in order of increasing energy.
+
+
+________________________________________________________________________________
+
+Number of distinct conformational clusters found = 1,  out of 10 runs,
+Using an rmsd-tolerance of 2.0 A
+
+
+	CLUSTERING HISTOGRAM
+	____________________
+
+________________________________________________________________________________
+     |           |     |           |     |                                    
+Clus | Lowest    | Run | Mean      | Num | Histogram                          
+-ter | Binding   |     | Binding   | in  |                                    
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |    -11.08 |   9 |    -11.08 |  10 |##########
+_____|___________|_____|___________|_____|______________________________________
+
+
+Number of multi-member conformational clusters found = 1, out of 10 runs.
+
+	RMSD TABLE
+	__________
+
+_____________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1      9      -11.08      0.00     40.65           RANKING
+   1      2      3      -11.08      0.00     40.65           RANKING
+   1      3      7      -11.08      0.00     40.65           RANKING
+   1      4     10      -11.08      0.00     40.65           RANKING
+   1      5      5      -11.08      0.00     40.65           RANKING
+   1      6      6      -11.08      0.00     40.65           RANKING
+   1      7      4      -11.08      0.00     40.65           RANKING
+   1      8      8      -11.08      0.00     40.65           RANKING
+   1      9      1      -11.08      0.00     40.65           RANKING
+   1     10      2      -11.08      0.00     40.65           RANKING
+_______________________________________________________________________
+
+
+
+	INFORMATION ENTROPY ANALYSIS FOR THIS CLUSTERING
+	________________________________________________
+
+
+Information entropy for this clustering = 0.00  (rmstol = 2.00 Angstrom)
+
+_______________________________________________________________________
+
+
+	STATISTICAL MECHANICAL ANALYSIS
+	_______________________________
+
+
+Partition function, Q =    10.19            at Temperature, T = 298.15 K
+Free energy,        A ~ -1375.32 kcal/mol   at Temperature, T = 298.15 K
+Internal energy,    U =   -11.08 kcal/mol   at Temperature, T = 298.15 K
+Entropy,            S =     4.58 kcal/mol/K at Temperature, T = 298.15 K
+
+_______________________________________________________________________
+
+
+	LOWEST ENERGY DOCKED CONFORMATION from EACH CLUSTER
+	___________________________________________________
+
+
+
+Keeping original residue number (specified in the input PDBQ file) for outputting.
+
+MODEL        9
+USER    Run = 9
+USER    Cluster Rank = 1
+USER    Number of conformations in this cluster = 10
+USER  
+USER    RMSD from reference structure       = 40.649 A
+USER  
+USER    Estimated Free Energy of Binding    =  -11.08 kcal/mol  [=(1)+(2)+(3)-(4)]
+USER    Estimated Inhibition Constant, Ki   =    7.52 nM (nanomolar)  [Temperature = 298.15 K]
+USER    
+USER    (1) Final Intermolecular Energy     =  -11.08 kcal/mol
+USER        vdW + Hbond + desolv Energy     =   +3.17 kcal/mol
+USER        Electrostatic Energy            =  -14.26 kcal/mol
+USER    (2) Final Total Internal Energy     =   +0.00 kcal/mol
+USER    (3) Torsional Free Energy           =   +0.00 kcal/mol
+USER    (4) Unbound System's Energy  [=(2)] =   +0.00 kcal/mol
+USER    
+USER    
+USER  
+USER    DPF = ./1.dpf
+USER    NEWDPF move	Fe2+.pdbqt
+USER    NEWDPF about	2.000000 0.000000 0.000000
+USER    NEWDPF tran0	40.535012 -4.349035 12.186004
+USER    NEWDPF axisangle0	-0.137511 -0.798994 -0.585406 -81.056654
+USER    NEWDPF quaternion0	-0.089358 -0.519205 -0.380411 -0.760085
+USER  
+USER                              x       y       z    vdW   Elec        q     RMS 
+ATOM      1 FE   UNL A   1      40.535  -4.349  12.186 +3.17-14.26    +2.000    40.649
+TER
+ENDMDL
+
+
+AVSFLD: # AVS field file
+AVSFLD: #
+AVSFLD: # Created by AutoDock
+AVSFLD: #
+AVSFLD: ndim=2           # number of dimensions in the field
+AVSFLD: nspace=1         # number of physical coordinates
+AVSFLD: veclen=7         # vector size
+AVSFLD: dim1=1           # atoms
+AVSFLD: dim2=1           # conformations
+AVSFLD: data=Real       # data type (byte,integer,Real,double)
+AVSFLD: field=uniform    # field coordinate layout
+AVSFLD: label= x y z vdW Elec q RMS
+AVSFLD: variable 1 file = ./1.dlg.pdb filetype = ascii offset = 5 stride = 12
+AVSFLD: variable 2 file = ./1.dlg.pdb filetype = ascii offset = 6 stride = 12
+AVSFLD: variable 3 file = ./1.dlg.pdb filetype = ascii offset = 7 stride = 12
+AVSFLD: variable 4 file = ./1.dlg.pdb filetype = ascii offset = 8 stride = 12
+AVSFLD: variable 5 file = ./1.dlg.pdb filetype = ascii offset = 9 stride = 12
+AVSFLD: variable 6 file = ./1.dlg.pdb filetype = ascii offset = 10 stride = 12
+AVSFLD: variable 7 file = ./1.dlg.pdb filetype = ascii offset = 11 stride = 12
+AVSFLD: # end of file
+
+>>> Closing the docking parameter file (DPF)...
+This docking finished at:			12:44 39" p.m., 06/08/2026
+
+
+________________________________________________________________________________
+
+./autodock4: Successful Completion on "DESKTOP-N0KCINQ"
+
+Real= 20.77s,  CPU= 18.81s,  System= 0.08s
+________________________________________________________________________________
+

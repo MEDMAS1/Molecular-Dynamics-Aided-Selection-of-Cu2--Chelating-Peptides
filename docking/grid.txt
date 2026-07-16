@@ -1,0 +1,4 @@
+pep3
+spacing    0.753
+npts       40 40 40
+center    29.244 -3.974  6.561

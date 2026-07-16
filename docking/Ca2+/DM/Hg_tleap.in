@@ -1,0 +1,9 @@
+
+source leaprc.protein.ff14SB #Source the ff14SB force field for protein
+source leaprc.water.spce #Source the SPC/E water model and related metal ion force fields
+mol = loadpdb cpx1_fixed.pdb #Load the PDB file
+solvatebox mol SPCBOX 8 #Solvate the system using SPC water box
+addions mol Cl- 0 #Neutralize the system using Cl- ions
+savepdb mol Ca_cpx3.pdb #Save the pdb file
+saveamberparm mol Ca_cpx3.prmtop Ca_cpx3.inpcrd #Save the topology and coordiante files
+quit #Quit tleap
