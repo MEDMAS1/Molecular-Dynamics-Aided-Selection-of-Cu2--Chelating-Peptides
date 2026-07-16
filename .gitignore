@@ -1,0 +1,18 @@
+# Large molecular dynamics outputs
+*.log
+*.edr
+*.xtc
+*.trr
+*.tpr
+*.cpt
+*.gro
+*.xvg
+*.pdb
+
+# GROMACS backup files
+\#*#
+
+# Generated MMPBSA output folders/files
+FINAL_RESULTS_MMPBSA.dat
+FINAL_DECOMP_MMPBSA.dat
+_MMPBSA*
